@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<phpunit bootstrap="tests/bootstrap.php"
-         convertErrorsToExceptions="true"
+<phpunit convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
-         stopOnFailure="false">
+         stopOnFailure="false"
+	 bootstrap="vendor/autoload.php"
+         colors="false">
     <testsuites>
         <testsuite name="Coinmotion API Test Suite">
-            <directory>tests</directory>
+            <directory suffix=".php">./tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>

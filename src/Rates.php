@@ -18,7 +18,7 @@ class Rates
    * @param none
    * @return JSON 
   */
-   public function getRates()
+   public static function getRates()
    {
       $apiClient = static::createApiClient();
       $response = $apiClient->sendRequest(['http_method' => 'GET', 'path' => '/rates']);
