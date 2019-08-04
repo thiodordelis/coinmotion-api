@@ -1,7 +1,7 @@
 {
     "name": "theodoros/coinmotion-api",
     "description": "Composer package for coinmotion.com public API",
-    "keywords": ["template", "composer", "package"],
+    "keywords": ["API", "Cryptocurrency", "composer", "package"],
     "license": "MIT",
     "authors": [
         {
@@ -11,10 +11,11 @@
     ],
     "type": "project",
     "require": {
-		"php": ">=7.1"
+        "php": ">=7.1",
+        "guzzlehttp/guzzle": "^6.2.1"
     },
     "require-dev": {
-		"phpunit/phpunit": "6.*"
+		"phpunit/phpunit": "8.*"
     },
     "autoload": {
         "psr-4": {

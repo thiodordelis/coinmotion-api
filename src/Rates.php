@@ -1,23 +1,35 @@
 <?php namespace Theodoros\Coinmotion;
 
+require_once 'vendor/autoload.php';
+
+use GuzzleHttp\Client;
+use Theodoros\Coinmotion\ApiClient;
+
 /**
-*  @author Theodoros Deligiannidis
+ * Class Rates 
+*  @author Theodoros Deligiannidis <thiodor@gmail.com>
 */
 
 class Rates
 {
 
   /**
-  * Sample method 
-  *
-  * Always create a corresponding docblock for each method, describing what it is for,
-  * this helps the phpdocumentator to properly generator the documentation
-  *
-  * @param string $param1 A string containing the parameter, do this for each parameter to the function, make sure to make it descriptive
-  *
-  * @return string
+   * Get cryptocurrency rates from Coinmotion.com
+   * @param none
+   * @return JSON 
   */
-   public function method1($param1){
-			return "Hello World";
+   public function getRates()
+   {
+      $apiClient = static::createApiClient();
+      $response = $apiClient->sendRequest(['http_method' => 'GET', 'path' => '/rates']);
+      return @json_decode($response->getBody());
    }
+
+    /**
+     * @return ApiClient
+     */
+    protected static function createApiClient()
+    {
+        return new ApiClient(new Client());
+    }
 }
