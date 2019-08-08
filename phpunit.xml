@@ -3,8 +3,8 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          stopOnFailure="false"
-	 bootstrap="vendor/autoload.php"
-         colors="false">
+	    bootstrap="vendor/autoload.php"
+         colors="true">
     <testsuites>
         <testsuite name="Coinmotion API Test Suite">
             <directory suffix=".php">./tests</directory>
